@@ -70,7 +70,6 @@
                 <div v-if="radio1 === 'option1'">
                   <el-input-number v-model="count"  :min="1" :max="999" label="人数设置"  @click="handleChange"></el-input-number>  
                   <el-button type="danger" @click="replace">序号</el-button>    
-                  <el-button type="danger" @click="newData">电话</el-button>
                 </div>
                 <div v-if="radio1 === 'option2'">
                   <el-input-number v-model="count"  :min="1" :max="999" label="人数设置"  @click="handleChange" ></el-input-number>
@@ -119,8 +118,9 @@ export default {
   },
   data(){
     return{
+        time:0,
         open:0,
-        tips:'请输入手机号',
+        tips:'请点击序号按钮',
         radio1:'option1',
         sign:"",
         rank:[],
@@ -154,7 +154,7 @@ export default {
         this.prizeList.length=this.count;
       },
       setting1(){
-        this.tips='请输入手机号';
+        this.tips='请点击序号按钮';
         //在次调用下面的事件来清空数据
         this.newData();
       },
@@ -164,7 +164,7 @@ export default {
           showClose: true,
           // 添加换行符
           dangerouslyUseHTMLString: true,
-          message: 'option2要求(必做): <br/>1:设置人员数;<br/>2:在第一个框输入以空格为界限的数字表单',
+          message: 'option2要求(必做): <br/>1:准确设置人员数;<br/>2:在第一个框输入以空格为界限的数字表单',
           duration:2000,
           type: 'warning'
         });
@@ -179,6 +179,7 @@ export default {
         this.rank[i]=i+1;
         }
           this.participant=this.rank;
+          this.participant.length=this.count;
           //使用强制渲染
           this.$forceUpdate();
       },
@@ -221,6 +222,7 @@ export default {
       show(data){
       // 由于数组必须先定义足够的长度才能够进行赋值，这里过于复杂后续会改进；
       this.list=data;
+      this.time=1;
       //利用open来切换图片的class
       this.open=0;
       this.sign=':';
@@ -303,7 +305,7 @@ export default {
         // 设置定时器监控时间
         setInterval(() => {
           //设置时间如果等于当地时间，就触发开奖
-          if(this.list.date===new Date(new Date()).Format("yyyy-MM-dd hh:mm:ss"))
+          if(this.list.date===new Date(new Date()).Format("yyyy-MM-dd hh:mm:ss")&&this.time==1)
           {
                   // 给result数组赋予跟奖项同样的奖项等级和每个奖项的中奖人数
                   var result=new Array();
@@ -336,8 +338,9 @@ export default {
                 })
                 console.log(result)
                 console.log(this.participant)
+                this.time=2;
         }
-        },500)},
+        },100)},
       handleClose (done) {
       this.$confirm('确认关闭？')
         .then(_ => {
@@ -465,7 +468,6 @@ export default {
     color:#660099;
     font-weight:bold;
   }
-  .clearfix:before,
   .clearfix:after {
     display: table;
     content: "";
@@ -487,7 +489,7 @@ export default {
     margin-top:8px;
   }
   .people .el-button{
-    width:85px;
+    width:180px;
     margin-top:5px;
   }
   .input span{

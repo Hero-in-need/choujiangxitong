@@ -1,6 +1,6 @@
 <template>
 <div class="Register">
-    <h1 style="font-size:30px;text-align:center;color:white">Welcome to join. Good luck! </h1>
+    <h1 style="font-size:30px;text-align:center;color:white">Welcome to join, Good luck! </h1>
         <div style="height:315px;margin:0px auto;width:400px;padding-top:5px">
             <div class="input">
             <span class="el-icon-user" style="float:left;font-size:30px;color:white;padding-left:70px"></span>

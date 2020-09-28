@@ -46,7 +46,7 @@ export default {
                 {value: 5, name: '二等奖'},
                 {value: 2, name: '三等奖'},
                 {value: 0, name: '四等奖'},
-                {value: 0, name: '五等奖'},
+                {value: 7, name: '五等奖'},
                 {value: 10, name: '未中奖'}
             ]
         }

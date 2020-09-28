@@ -1,5 +1,5 @@
 <template>
-<div style="margin:40px auto;width:465px">
+<div style="margin:40px auto;width:465px;">
 <el-form ref="form" :model="prizeForm" label-width="80px" size="medium" style="text-align:center">
   <el-form-item label="活动名称:">
     <el-input v-model="prizeForm.name" style="width:350px"></el-input>
