@@ -15,11 +15,10 @@ export default {
         trigger: 'item',
         formatter: '{a}<br/>{b}: {c}次  ({d}%)'
     },
-    color:['#4962FC','#dd3ee5','#12e78c','#fe8104','#01C2F9','#F4CB29','#FFA500'],
+    color:['#4962FC','#dd3ee5','#12e78c','#fe8104','#01C2F9','#C71585','#FFA500'],
     legend: {
         orient: 'vertical',
         left: 10,
-        data: ['特等奖', '一等奖', '二等奖', '三等奖', '四等奖','五等将','未中奖']
     },
     series: [
         {
