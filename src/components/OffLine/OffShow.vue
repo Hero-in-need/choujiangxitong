@@ -184,7 +184,7 @@ export default {
           this.$forceUpdate();
       },
       newData(){
-        //让以序号为抽奖依据变为以电话为抽奖依据，先将数据清空
+        //将数据清空
         this.participant.fill('')
         this.participant.length=this.count;
         //使用强制渲染
