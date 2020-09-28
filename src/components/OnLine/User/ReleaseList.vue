@@ -34,7 +34,7 @@
      </div>
      <!-- 我发布的抽奖  -->
      <div style="text-align:center;">
-     <el-button type="primary" @click="dialogVisible2 = true" style="width:300px">添加抽奖活动</el-button>
+     <el-button type="primary" @click="dialogVisible5 = true" style="width:300px">添加抽奖活动</el-button>
      </div>
           <el-dialog title="抽奖活动设置" :visible.sync="dialogVisible5" width="50%" :before-close="handleClose">
               <el-card class="box-card">
