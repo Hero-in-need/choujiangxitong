@@ -170,8 +170,8 @@ export default {
           showClose: true,
           // 添加换行符
           dangerouslyUseHTMLString: true,
-          message: 'option2要求(必做): <br/>1:准确设置人员数;<br/>2:在第一个框输入以空格为界限的数字表单',
-          duration:2000,
+          message: 'option2要求: <br/>1:准确设置人员数;<br/>2:在第一个框输入以空格为界限的数字表单',
+          duration:3000,
           type: 'warning'
         });
         //在次调用下面的事件来清空数据
