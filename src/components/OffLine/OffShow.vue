@@ -155,6 +155,12 @@ export default {
       },
       setting1(){
         this.tips='请点击序号按钮';
+        this.$message({
+          message: 'option1要求: <br/>1:每次改变人数后一定要点击序号按钮来更新',
+          dangerouslyUseHTMLString: true,
+          duration:3000,
+          type: 'warning'
+        })
         //在次调用下面的事件来清空数据
         this.newData();
       },
